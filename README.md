@@ -1,73 +1,81 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# SaaS Expense & Reimbursement Admin Dashboard
 
-Currently, two official plugins are available:
+A production-style **SaaS admin dashboard** built using **React, TypeScript, and Tailwind CSS**, inspired by real-world expense and reimbursement platforms like Rippling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project focuses on **scalable frontend architecture**, role-based access, and data-heavy financial workflows.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- Role-based UI access (Admin, Finance, Employee)
+- Expense and reimbursement management dashboard
+- Paginated expense table with approval status
+- Dashboard metrics for financial visibility
+- Clean, modular, and reusable component architecture
+- Strict TypeScript + ESLint-compliant codebase
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🧑‍💼 Roles & Access
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Admin**
+  - Full access to dashboard, expenses, reimbursements, and users
+- **Finance**
+  - View and manage expenses and reimbursements
+- **Employee**
+  - View dashboard and personal expenses
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+(Role switching is simulated on the frontend using React Context API.)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠 Tech Stack
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- React 18
+- TypeScript (strict mode)
+- Tailwind CSS
+- Vite
+- React Context API
+- ESLint
+
+---
+
+## 📁 Project Structure
+
+
+npm install
+npm run dev
+src/
+├── components/
+│ └── layout/
+├── context/
+│ ├── AuthContext.ts
+│ ├── AuthProvider.tsx
+│ └── useAuth.ts
+├── features/
+│ ├── dashboard/
+│ └── expenses/
+├── App.tsx
+└── main.tsx
+
+
+---
+
+---
+
+## 🧠 Key Engineering Highlights
+
+- Designed scalable SaaS-style frontend architecture
+- Implemented role-based UI rendering without backend dependency
+- Built pagination to handle large financial datasets efficiently
+- Followed strict TypeScript and ESLint rules used in production codebases
+
+---
+
+## ▶️ Run Locally
+
+```bash
+npm install
+npm run dev
